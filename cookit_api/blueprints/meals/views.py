@@ -11,7 +11,8 @@ def index():
       "id": meal.id,
       "name": meal.name,
       "prep_time": meal.prep_time,
-      "cookware": meal.cookware
+      "cookware": meal.cookware,
+      "url": meal.url
       } for meal in meals])
 
 
@@ -23,13 +24,15 @@ def create():
     ingredients = data.get('ingredients')
     prep_time = data.get('prep_time')
     cookware = data.get('cookware')
+    url = data.get('url')
 
-    if name and ingredients and prep_time:
+    if name and ingredients and prep_time and url:
         meal = Meal(
             name = name,
             ingredients = ingredients,
             prep_time = prep_time,
-            cookware = cookware
+            cookware = cookware,
+            url = url
         )
         if meal.save():
             return jsonify({

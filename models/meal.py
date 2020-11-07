@@ -7,6 +7,7 @@ class Meal(BaseModel):
     ingredients = JSONField()
     prep_time = pw.CharField()
     cookware = JSONField()
+    url = pw.TextField()
 
     def validate(self):
         duplicate_meal = Meal.get_or_none(Meal.name == self.name)
