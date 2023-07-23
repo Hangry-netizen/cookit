@@ -5,7 +5,7 @@ gateway = braintree.BraintreeGateway(
     braintree.Configuration(
         braintree.Environment.Sandbox,
         merchant_id=app.config.get("BT_MERCHANT"),
-         public_key=app.config.get("BT_PUBLIC"),
+        public_key=app.config.get("BT_PUBLIC"),
         private_key=app.config.get("BT_PRIVATE")
     )
 )
